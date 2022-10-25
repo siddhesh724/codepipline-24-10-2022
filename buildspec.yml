@@ -4,7 +4,10 @@ phases:
   build:
     commands:
       - echo Build completed on `date`
-      - mvn package
+      - apt-get update
+      - apt install maven -y
+      - apt-get install openjdk-8-jdk -y
+      - mvn clean install -f pom.xml
 
 artifacts:
   files:
